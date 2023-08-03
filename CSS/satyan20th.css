@@ -1,0 +1,203 @@
+/* satyan20th.css */
+
+body {
+    font-family: "CandyPop", sans-serif;
+    background-color: #fce2e5; /* ライトピンク色 */
+    margin: 0;
+    padding: 0;
+    position: relative; /* ::before疑似要素の位置を決めるために必要 */
+}
+
+/* 水玉模様用の ::before 疑似要素 */
+body::before {
+    content: ""; /* contentプロパティが必要 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#ffccdd 10%, transparent 11%),
+                      radial-gradient(#ffccdd 10%, transparent 11%);
+    background-size: 50px 50px; /* 水玉の間隔 */
+    background-position: 0 0, 25px 25px; /* 水玉の位置 */
+    z-index: -1; /* 背景よりも下に配置する */
+}
+
+header {
+    background-color: #ffccdd; /* ピンク色 */
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid #ff6699; /* ピンク色の下線を追加 */
+    background: url('images/Hello Kitty Good Night GIF - Hello Kitty Good Night - Discover & Share GIFs.gif');
+    opacity: 0.8;
+}
+
+/* キャンディポップのフォントを指定するルール */
+@font-face {
+    font-family: "CandyPop";
+    src: url('Candy_Pop!-demo-font.ttf') format("truetype");
+    /* フォントファイルのパスを実際のファイルパスに変更してください */
+}
+
+h1 {
+    font-family: "CandyPop", cursive; /* ダンシングスクリプトというかわいいフォントを使う*/ 
+    font-size: 5em;
+    color: #070707; /* 明るいピンク色 */
+    margin: 0;
+    font-weight: bold; /* 太字にする */
+
+}
+
+h2 {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 3em;
+    color: magenta;
+}
+
+p {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.2em;
+    color: #ff3399; /* 薄いピンク色 */
+}
+
+main {
+    display: flex;
+    flex-direction: column; /* スライドショーと文章を縦に配置するためにcolumnに設定 */
+    align-items: center; /* 中央揃え */
+    background: url('Dance Dancing Sticker - Dance Dancing Dancing Dog - Discover & Share GIFs.gif');
+}
+
+/* ... 他のスタイル ... */
+
+.slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-bottom: 20px; /* スライドショーの下に余白を追加 */
+}
+
+.slideshow img {
+    width: 400px;
+    height: 400px;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 1s ease;
+}
+
+/* ... 他のスタイル ... */
+
+.description {
+    text-align: center;
+    background-color: #fff0f3; /* ライトピンク色 */
+    padding: 20px;
+    border: 1px solid #ffccdd; /* ピンク色の枠線を追加 */
+}
+
+.description img {
+    width: 300px;
+    height: 300px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image-container img {
+    margin: 10px;
+}
+
+
+
+/* フェードインアニメーションのキーフレーム */
+@keyframes fade-in {
+    to {
+        opacity: 1;
+    }
+}
+
+
+.dates {
+    text-align: center;
+    margin-top: 20px; /* 20pxなど適切な値に調整 */
+}
+
+
+/* styles.css */
+
+.card {
+    border: 1px solid #ff0066; /* ピンク色の枠線 */
+    background-color: #fcd4ec; /* カラフルなピンク色に変更 */ 
+    border: 2px solid #ff0066; /* 薄いピンク色のボーダーを追加 */
+    padding: 20px;
+    border-radius: 10px; /* 角丸 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影をつける */
+    width: 800px; /* カードの幅 */
+}
+
+.card img {
+    max-width: 100%; /* カード内の画像の最大幅をカードの幅に合わせる */
+    height: auto; /* 高さは自動調整される */
+    border-radius: 10px; /* イメージにも角丸を適用 */
+}
+
+.card h2 {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 2em; /* フォントサイズを大きくする */
+    font-weight: bold; /* 太字にする */
+    color: #ff0066; /* 明るいピンク色 */
+    margin-top: 10px;
+}
+
+.card p {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.2em;
+    color: #ff3399; /* 薄いピンク色 */
+    margin-top: 5px;
+}
+
+/* ジャンプするアニメーションを定義 */
+@keyframes jump {
+    0%, 100% {
+        transform: translateY(0); /* 0%と100%の時点では元の位置（上下に動かさない） */
+    }
+    50% {
+        transform: translateY(-20px); /* 50%の時点で上に20pxジャンプ */
+    }
+}
+
+/* ジャンプするテキストにアニメーションを適用 */
+.jumping-text {
+    animation: jump 2s ease-in-out infinite; /* 2秒間でジャンプするアニメーションを繰り返す */
+}
+
+/* テキストを初めは非表示にする */
+.photo-caption {
+    display: none;
+}
+
+/* テキストが表示されるアニメーションを定義 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px); /* 10px下に移動させて非表示にする */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* 元の位置に戻す */
+    }
+}
+
+/* テキストが表示されるようにするクラスを定義 */
+.show {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.photo-caption {
+    color: #dd33ff; /* 薄いピンク色 */
+}
