@@ -27,7 +27,7 @@ header {
     background-color: #ffccdd; /* ピンク色 */
     text-align: center;
     padding: 20px;
-    border-bottom: 2px solid #ff6699; /* ピンク色の下線を追加 */
+    border-bottom: １０px solid #ff6699; /* ピンク色の下線を追加 */
     background-image: url('images/Hello Kitty Good Night GIF - Hello Kitty Good Night - Discover & Share GIFs.gif');
     opacity: 0.8;
 }
